@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Missionario - Cristianismo no Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Base Missionaria: Cristianismo no Brasil</h1>
+      <p>
+        Plataforma de consulta para apoiar decisoes missionarias com indicadores de catolicos, evangelicos,
+        sem religiao e outras crencas por ano e regiao.
+      </p>
+
+      <div class="status-line" id="statusDados">Atualizando dados online...</div>
+
+      <div class="controls">
+        <div class="control">
+          <label for="anoSelect">Ano de referencia</label>
+          <select id="anoSelect"></select>
+        </div>
+
+        <div class="control">
+          <label for="regiaoSelect">Regiao para analise local</label>
+          <select id="regiaoSelect"></select>
+        </div>
+
+        <div class="control">
+          <label for="buscaInput">Busca de foco missionario</label>
+          <input id="buscaInput" type="text" placeholder="Ex.: juventude, sertao, universidades" />
+        </div>
+      </div>
+    </section>
+
+    <section class="cards" id="cardsResumo"></section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Distribuicao Religiosa Nacional</h2>
+        <small id="tituloPizza">Percentual estimado para o Brasil</small>
+        <canvas id="graficoPizza"></canvas>
+      </article>
+       <article class="panel">
+            <h2>Comparativo por Regiao</h2>
+            <small id="tituloBarras">Participacao por grupo religioso</small>
+            <canvas id="graficoBarras"></canvas>
+            <div id="detalheRegiao" class="region-detail"></div>
+       </article>
+    </section>
+    <section class="bottom">
+     <article class="panel">
+        <h2>Evolucao no Tempo</h2>
+        <small>Serie historica com atualizacao online da ultima divulgacao do IBGE</small>
+        <canvas id="graficoLinha"></canvas>
+      </article>
+
+      <article class="panel">
+        <h2>Noticias Missionarias Inclusas</h2>
+        <small id="statusNoticias">Buscando noticias na internet...</small>
+        <div id="listaNoticias" class="news-list"></div>
+      </article>
+    </section>
+
+    <footer>
+      Fonte base: IBGE/SIDRA (tabela 6417) + RSS de noticias online.
+    </footer>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
